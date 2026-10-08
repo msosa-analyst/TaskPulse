@@ -20,11 +20,8 @@ final class AppRouter: Router {
 
     // MARK: - Flow Execution
     func start() {
-        let initialVC = ViewController()
-        initialVC.view.backgroundColor = .systemBackground
-        initialVC.title = "TaskPulse Base"
-        
-        push(initialVC, animated: false)
+        let initialVC = LoginModuleBuilder.build(navigationController: self.navigationController)
+        navigationController.setViewControllers([initialVC], animated: false)
     }
 
     // MARK: - Navigation Methods
